@@ -13,8 +13,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: docker login
-      run: | 
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD  
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
     - name: Get current date 
       id: date
       run: echo "::set-output name=date::$(date +'%Y-%m-%d--%M-%S')"
