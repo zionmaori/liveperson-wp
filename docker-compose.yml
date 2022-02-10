@@ -22,7 +22,7 @@ services:
 
   wordpress: 
       build:
-        context: wordpress
+        context: zionmaori/livperson_wp:latest
       container_name: wp_lp
       env_file: 
         - .env
