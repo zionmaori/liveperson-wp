@@ -2,6 +2,8 @@ name: Docker Image CI for dev env
 
 on:
   pull_request_target:
+    types:
+      - opened
     branches: [ dev ]
   push:
     branches: [ dev ]
