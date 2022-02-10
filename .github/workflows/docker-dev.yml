@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
   
-  build and push images:
+  build-and-push-images:
     runs-on: ubuntu-latest
     steps:
     - name: Get current date 
