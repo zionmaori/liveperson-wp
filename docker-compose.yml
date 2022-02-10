@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+    wordpress: 
+      build:
+        context: wordpress
+      container_name: wp_lp
+      env_file: 
+        - .env
+      environment: 
+        WORDPRESS_CONFIG_EXTRA: |
+            define('WP_HOME', '$WP_HOME');
+            define('WP_SITEURL', '$WP_SITEURL');
+            define('FS_METHOD', 'direct');
+            set_time_limit(600);
+        WORDPRESS_DB_HOST: "${WORDPRESS_DB_HOST}"
+        WORDPRESS_DB_NAME: "${WORDPRESS_DB_NAME}"
+        WORDPRESS_DB_PASSWORD: "${WORDPRESS_DB_PASSWORD}"
+        WORDPRESS_DB_USER: "${WORDPRESS_DB_USER}"
+        WORDPRESS_TABLE_PREFIX: "${WORDPRESS_TABLE_PREFIX}"
+        XDEBUG_CONFIG: "remote_host=${OWN_IP}"
+      ports: 
+        - "8080:80"
+      restart: always
+      volumes: 
+        - "./wordpress:/var/www/html/"
+      networks:
+        - lp_net
+networks:
+  lp_net:
+    driver: "bridge"
