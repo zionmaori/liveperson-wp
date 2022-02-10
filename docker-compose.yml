@@ -38,7 +38,7 @@ services:
         WORDPRESS_DB_USER: "${WORDPRESS_DB_USER}"
         WORDPRESS_TABLE_PREFIX: "${WORDPRESS_TABLE_PREFIX}"
       ports: 
-        - "8080:80"
+        - "80:80"
       restart: always
       volumes: 
         - "./wordpress:/var/www/html/"

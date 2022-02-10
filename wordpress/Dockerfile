@@ -9,6 +9,3 @@ ENV WORDPRESS_DB_HOST=${WORDPRESS_DB_HOST} \
     WORDPRESS_DB_NAME=${WORDPRESS_DB_NAME} \
     WORDPRESS_TABLE_PREFIX=${WORDPRESS_TABLE_PREFIX}
 
-COPY plugins/ /var/www/html/wp-content/plugins
-COPY themes/ /var/www/html/wp-content/themes
-COPY uploads/ /var/www/html/wp-content/uploads
