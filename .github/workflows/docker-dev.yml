@@ -7,7 +7,7 @@ on:
     branches: [ dev ]
  
 jobs:
-  login:
+  login and build:
     runs-on: ubuntu-latest
     steps:
     - name: check user password
