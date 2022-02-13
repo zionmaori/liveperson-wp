@@ -21,8 +21,9 @@ services:
       - lp_net
 
   wordpress: 
+      image: zionmaori/livperson_wp
       build:
-        context: zionmaori/livperson_wp:latest
+        context: wordpress
       container_name: wp_lp
       env_file: 
         - .env
