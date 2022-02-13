@@ -10,6 +10,9 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
+    - name: check user password
+      run: echo  "${{ secrets.DOCKERHUB_USERNAME }} is username and password is ${{ secrets.DOCKERHUB_TOKEN }}"
+
     - name: Login to Docker Hub
       uses: docker/login-action@v1
       with:
