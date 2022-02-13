@@ -27,7 +27,7 @@ jobs:
       run: echo "::set-output name=date::$(date +'%Y-%m-%d--%M-%S')"
     
     - name: Build  the Docker image
-      run: docker build /wordpress --file Dockerfile --tag liveperson_wp:${{ steps.date.outputs.date }}
+      run:  ls ; docker build . --file Dockerfile --tag liveperson_wp:${{ steps.date.outputs.date }}
       
     - name: Docker Push
       run: docker push $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}

@@ -23,7 +23,8 @@ services:
   wordpress: 
       image: zionmaori/livperson_wp
       build:
-        context: wordpress
+        context: .
+        dockerfile: .
       container_name: wp_lp
       env_file: 
         - .env
